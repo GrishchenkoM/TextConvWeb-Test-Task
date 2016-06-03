@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Text Converter</title>
+
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" media="all" />
+    <link href="@Url.Content("~/Content/templatemo_style.css")" rel="stylesheet" type="text/css" media="all" />
+
+    <script src="../../Scripts/jquery-1.11.3.js" type="text/javascript"></script>
+    <script type="text/javascript" src="@Url.Content("~/scripts/jquery.unobtrusive-ajax.min.js")"></script>
+
+</head>
+<body>
+    @RenderBody()
+    @RenderSection("scripts", false)
+
+    <div id="templatemo_body_wrapper">
+        <div id="templatemo_wrapper">
+            <div id="templatemo_header">
+                <div id="site_title">
+                    <a href="https://ua.linkedin.com/in/michael-grishchenko-252809aa" target="_parent">
+                        TestConvWeb
+                        <span>Test Task</span><br />
+                        <span class="tagline">Developed by Grishchenko M.V. exclusively for Essention</span>
+                    </a>
+                </div> <!-- end of site_title -->
+
+                <div class="cleaner"></div>
+
+            </div> <!-- end of header -->
+
+            <div id="templatemo_main">
+                @RenderSection("Context")
+            </div>
+
+        </div>
+        <div class="cleaner"></div>
+    </div>
+
+    <div id="templatemo_footer_wrapper">
+        <div id="templatemo_footer">
+
+            <div class="cleaner"></div>
+        </div>
+    </div>
+
+    <div id="templatemo_copyright">
+        Copyright © 2016 | Developed by <a href="https://ua.linkedin.com/in/michael-grishchenko-252809aa">Grishchenko Michael</a> |
+        Used some parts of templates from <a href="http://www.templatemo.com" target="_parent">Free CSS Templates</a>
+    </div>
+
+</body>
+</html>

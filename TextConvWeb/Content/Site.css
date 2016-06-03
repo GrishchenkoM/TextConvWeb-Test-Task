@@ -1,0 +1,132 @@
+﻿body {
+    background-color: #fff;
+    color: #232323;
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    font-size: .85em;
+}
+
+header, footer, nav, section { display: block; }
+
+
+/* Styles for basic forms
+-----------------------------------------------------------*/
+
+fieldset {
+    border: 1px solid #ddd;
+    margin: 0 0 1.5em 0;
+    padding: 0 1.4em 1.4em 1.4em;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+textarea { min-height: 75px; }
+
+.editor-label { margin: 1em 0 0 0; }
+
+.editor-field { margin: 0.5em 0 0 0; }
+
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+
+.field-validation-error { color: #f00; }
+
+.field-validation-valid { display: none; }
+
+.input-validation-error {
+    background-color: #fee;
+    border: 1px solid #f00;
+}
+
+.validation-summary-errors {
+    color: #f00;
+    font-weight: bold;
+}
+
+.validation-summary-valid { display: none; }
+
+.search-submit {
+    background: #8b0000;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    height: 27px;
+    line-height: 26px;
+    margin: 12px 0 10px 0;
+    width: 70px;
+}
+
+.search-button input[type=submit] {
+    background: -moz-linear-gradient(center top, #a52a2a, #394D63) repeat scroll 0 0 transparent;
+    background: #8b0000 linear-gradient(#8b0000, #a70000);
+    border: 1px solid rgb(250, 172, 17);
+    border-radius: 7px;
+    /*background: deepskyblue linear-gradient(rgb(255,212,3), rgb(248,157,23));*/
+    box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0), inset 0 1px 2px rgba(0, 0, 0, 0), inset 0 0 0 60px rgba(255, 255, 0, 0);
+    color: #ffffff;
+    display: inline-block;
+    font-size: 125%;
+    font-weight: 700;
+    outline: none;
+    padding: .25em .5em;
+    text-decoration: none;
+    transition: box-shadow .2s, border-color .2s;
+    user-select: none;
+}
+
+.search-button input[type=submit]:hover {
+    box-shadow: inset 0 -1px 1px #ff0000, inset 0 1px 2px #ff0000, inset 0 0 0 60px #0000ff;
+    color: yellow;
+}
+
+.search-button input[type=submit]:active {
+    border-color: rgba(177, 159, 0, 1);
+    box-shadow: inset 0 -1px 1px rgba(0, 0, 0, .1), inset 0 1px 2px rgba(0, 0, 0, .3), inset 0 0 0 60px rgba(255, 255, 0, .45);
+    padding: calc(.25em + 1px) .5em calc(.25em - 1px);
+}
+
+#content1 { display: none; }
+
+.box-content textarea {
+    border: 1px solid #7C7C7C;
+    height: 200px;
+    margin: 20px 0px 0px;
+    margin-bottom: 5px;
+    max-height: 225px;
+    max-width: 700px;
+    padding: 1px 5px 2px;
+    width: 700px;
+}
+
+.about-site {
+    /*display: flex;*/
+    align-items: center;
+    height: 100%;
+    
+    justify-content: center;
+    width: 100%;
+    /*overflow: auto;*/
+}
+
+.fieldSets fieldset {
+    background: #a70000;
+    background: -moz-linear-gradient(center top, #a52a2a, #394D63) repeat scroll 0 0 transparent;
+    background: #a15000 linear-gradient(#8b0000, #f0f8ff);
+    border: none;
+    border: 1px solid rgb(250, 172, 17);
+    border-radius: 7px;
+    box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0), inset 0 1px 2px rgba(0, 0, 0, 0), inset 0 0 0 60px rgba(255, 255, 0, 0);
+    display: block;
+    transition: box-shadow .2s, border-color .2s;
+}
+
+#res .fieldSets { padding-top: 20px; }
+
+.fieldSets fieldset:hover {
+    box-shadow: inset 0 -1px 1px #ff0000, inset 0 1px 2px #48d1cc, inset 0 0 0 60px #0000ff;
+    color: yellow;
+}

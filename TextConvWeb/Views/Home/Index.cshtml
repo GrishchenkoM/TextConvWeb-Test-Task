@@ -1,0 +1,110 @@
+﻿@model TextConvWeb.Models.ViewModel
+@{
+    ViewBag.Title = "Главная";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script>
+
+    function ReturnXml() {
+        var viewModel = {
+            Text: $('#message').val(),
+            SelectedSort: document.getElementById('sort[]').value
+        }
+        $.ajax({
+            url: '/api/values/ReturnXml',
+            type: 'POST',
+            data: viewModel,
+            success: function (data) {
+                $('#answ').val(data);
+                Replace(',', '\n');
+            }
+        });
+    }
+    function ReturnCsv() {
+        var viewModel = {
+            Text: $('#message').val(),
+            SelectedSort: document.getElementById('sort[]').value
+        }
+        $.ajax({
+            url: '/api/values/ReturnCsv',
+            type: 'POST',
+            data: viewModel,
+            success: function (data) {
+                $('#answ').val(data);
+                Replace(',Sentence', '\nSentence');
+            }
+        });
+    }
+    
+    @*Needs because components of string's array displayed with a comma, not a NEL *@
+    function Replace(from, to) {
+        while ($('#answ').val().indexOf(from) !== -1) {
+            $('#answ').val($('#answ').val().replace(from, to));
+        }
+    }
+
+</script>
+
+@section Context{
+
+    <div class="post_box pb_last">
+        
+        <div class="templatemo">
+            <div class="box-content">
+                <div class="about-site">
+                    <div class="fieldSets">
+                        <fieldset>
+                            <textarea required id="message" name="message" class="message required" form="text"></textarea>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cleaner"></div>
+
+        <div align="center">
+            <div class="about-site">
+                <div class="search-button" align="center">
+                    <input type="submit" value="XML" onclick="ReturnXml()" form="text"/>
+
+                    <span>@SelectedList()</span>
+
+                    <input type="submit" value="CSV" onclick="ReturnCsv()" form="text"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="templatemo">
+            <div class="box-content">
+                <div id="res">
+                    <div class="about-site">
+                        <div class="fieldSets">
+                            <fieldset>
+                                <textarea required id="answ" name="answ" class="message required" disabled="disabled"></textarea>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@helper SelectedList()
+{
+    <select id="sort[]" name="sort[]" size="1">
+        <option disabled>Sorting of text</option>
+        @foreach (var sort in Model.Sort)
+        {
+            if (sort.ToLower().Equals("none"))
+            {
+                <option value="@sort" selected="selected">@sort</option>
+            }
+            else
+            {
+                <option value="@sort">@sort</option>
+            }
+        }
+   </select>
+}
